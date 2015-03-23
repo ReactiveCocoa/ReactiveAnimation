@@ -1,0 +1,3 @@
+github "LlamaKit/LlamaKit" "v0.6.0"
+github "jspahrsummers/xcconfigs" "0.7.2"
+github "ReactiveCocoa/ReactiveCocoa" "ad02d8356b43e2c38f3d4d87ea0127c5f8572668"
