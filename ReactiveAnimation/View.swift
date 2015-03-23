@@ -68,27 +68,19 @@ public struct RAN {
 
     #if os(OSX)
 		public var frameOrigin: ViewProperty<CGPoint> {
-			return viewProperty { value in
-				self.animator?.setFrameOrigin(value)
-			}
+			return viewProperty { self.animator?.setFrameOrigin($0) }
 		}
 
 		public var frameSize: ViewProperty<CGSize> {
-			return viewProperty { value in
-				self.animator?.setFrameSize(value)
-			}
+			return viewProperty { self.animator?.setFrameSize($0) }
 		}
 
 		public var boundsOrigin: ViewProperty<CGPoint> {
-			return viewProperty { value in
-				self.animator?.setBoundsOrigin(value)
-			}
+			return viewProperty { self.animator?.setBoundsOrigin($0) }
 		}
 
 		public var boundsSize: ViewProperty<CGSize> {
-			return viewProperty { value in
-				self.animator?.setBoundsSize(value)
-			}
+			return viewProperty { self.animator?.setBoundsSize($0) }
 		}
     #endif
 
