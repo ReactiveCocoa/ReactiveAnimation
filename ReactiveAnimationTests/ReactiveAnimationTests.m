@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 ReactiveCocoa. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 
 @interface ReactiveAnimationTests : XCTestCase

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 ReactiveCocoa. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for ReactiveAnimation.
 FOUNDATION_EXPORT double ReactiveAnimationVersionNumber;
