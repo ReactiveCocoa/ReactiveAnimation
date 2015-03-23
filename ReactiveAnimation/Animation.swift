@@ -16,6 +16,22 @@
 	public typealias AnimationCurveRawValue = UIViewAnimationCurve.RawValue
 #endif
 
+/// The number of animated signals in the call stack.
+///
+/// This variable should be manipulated with OSAtomic functions.
+private var runningInAnimationCount: Int32 = 0
+
+/// Determines whether the calling code is running from within an animation
+/// definition.
+///
+/// This can be used to conditionalize behavior based on whether a signal
+/// somewhere in the chain is supposed to be animated.
+///
+/// This property is thread-safe.
+public var runningInAnimation: Bool {
+	return runningInAnimationCount > 0
+}
+
 /// Describes the curve (timing function) for an animation.
 public enum AnimationCurve: AnimationCurveRawValue, Equatable {
 	/// The default or inherited animation curve.
