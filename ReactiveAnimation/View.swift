@@ -56,6 +56,20 @@ public struct RAN {
 		return viewProperty { self.animator?.bounds = $0 }
 	}
 
+    #if os(iOS)
+    public var center: ViewProperty<CGPoint> {
+        return viewProperty { self.animator?.center = $0 }
+    }
+    
+    public var backgroundColor: ViewProperty<UIColor> {
+        return viewProperty { self.animator?.backgroundColor = $0 }
+    }
+    
+    public var transform: ViewProperty<CGAffineTransform> {
+        return viewProperty { self.animator?.transform = $0 }
+    }
+    #endif
+    
 	public var alpha: ViewProperty<CGFloat> {
 		return viewProperty { value in
 			#if os(OSX)
