@@ -61,8 +61,8 @@ public struct RAN {
         return viewProperty { self.animator?.center = $0 }
     }
     
-    public var backgroundColor: ViewProperty<CGColor> {
-        return viewProperty { self.animator?.layer.backgroundColor = $0 }
+    public var backgroundColor: ViewProperty<UIColor> {
+        return viewProperty { self.animator?.backgroundColor = $0 }
     }
     
     public var transform: ViewProperty<CGAffineTransform> {
