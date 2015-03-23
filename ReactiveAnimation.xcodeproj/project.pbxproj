@@ -25,6 +25,8 @@
 		D04EE2581ABFBBB100AC8E65 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D04EE25C1ABFBBDF00AC8E65 /* SwiftJunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */; };
 		D04EE25D1ABFBBDF00AC8E65 /* SwiftJunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */; };
+		D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
+		D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,7 @@
 		D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE2591ABFBBDE00AC8E65 /* ReactiveAnimationTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveAnimationTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJunk.swift; sourceTree = "<group>"; };
+		D04EE25F1ABFBD9100AC8E65 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */,
+				D04EE25F1ABFBD9100AC8E65 /* Animation.swift */,
 				D04EE1ED1ABFB9AD00AC8E65 /* Supporting Files */,
 			);
 			path = ReactiveAnimation;
@@ -434,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +492,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -500,6 +507,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -532,16 +540,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2181ABFB9E100AC8E65 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -549,13 +554,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2181ABFB9E100AC8E65 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
 			};
@@ -587,17 +590,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2131ABFB9E100AC8E65 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -605,14 +605,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2131ABFB9E100AC8E65 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
 			};
@@ -626,6 +624,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -647,13 +646,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2181ABFB9E100AC8E65 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
 			};
@@ -674,14 +671,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2131ABFB9E100AC8E65 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
 			};
@@ -695,6 +690,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -716,16 +712,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2181ABFB9E100AC8E65 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Test;
 		};
@@ -744,17 +737,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04EE2131ABFB9E100AC8E65 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ReactiveAnimationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactiveAnimationTests/ReactiveAnimationTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Test;
 		};
