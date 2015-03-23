@@ -1,6 +1,6 @@
 # ReactiveAnimation [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Declarative animations using ReactiveCocoa signals. See the [Mac
+Declarative animations using [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) signals. See the [Mac
 demo](https://github.com/ReactiveCocoa/ReactiveAnimation-MacDemo) for an example
 of how the library works.
 
