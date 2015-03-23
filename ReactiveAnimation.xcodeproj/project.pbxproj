@@ -27,6 +27,8 @@
 		D04EE25D1ABFBBDF00AC8E65 /* SwiftJunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */; };
 		D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
 		D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
+		D04EE2671ABFC79200AC8E65 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
+		D04EE2681ABFC79200AC8E65 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,7 @@
 		D04EE2591ABFBBDE00AC8E65 /* ReactiveAnimationTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveAnimationTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJunk.swift; sourceTree = "<group>"; };
 		D04EE25F1ABFBD9100AC8E65 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		D04EE2661ABFC79200AC8E65 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */,
-				D04EE25F1ABFBD9100AC8E65 /* Animation.swift */,
+				D04EE2621ABFC2F500AC8E65 /* Cross-Platform */,
+				D04EE2631ABFC30D00AC8E65 /* Mac */,
 				D04EE1ED1ABFB9AD00AC8E65 /* Supporting Files */,
 			);
 			path = ReactiveAnimation;
@@ -261,6 +265,22 @@
 				D04EE21C1ABFB9E100AC8E65 /* Mac-StaticLibrary.xcconfig */,
 			);
 			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+		D04EE2621ABFC2F500AC8E65 /* Cross-Platform */ = {
+			isa = PBXGroup;
+			children = (
+				D04EE25F1ABFBD9100AC8E65 /* Animation.swift */,
+				D04EE2661ABFC79200AC8E65 /* View.swift */,
+			);
+			name = "Cross-Platform";
+			sourceTree = "<group>";
+		};
+		D04EE2631ABFC30D00AC8E65 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04EE2671ABFC79200AC8E65 /* View.swift in Sources */,
 				D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04EE2681ABFC79200AC8E65 /* View.swift in Sources */,
 				D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
