@@ -1,4 +1,4 @@
-The MIT License (MIT)
+**The MIT License (MIT)**<br>
 Copyright (c) ReactiveAnimation contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
