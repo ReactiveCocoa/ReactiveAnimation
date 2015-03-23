@@ -66,53 +66,31 @@ public struct RAN {
 		}
 	}
 
-	public var frameOrigin: ViewProperty<CGPoint> {
-		return viewProperty { value in
-			#if os(OSX)
+    #if os(OSX)
+		public var frameOrigin: ViewProperty<CGPoint> {
+			return viewProperty { value in
 				self.animator?.setFrameOrigin(value)
-			#elseif os(iOS)
-				if let size = self.animator?.frame.size {
-					self.animator?.frame = CGRect(origin: value, size: size)
-				}
-			#endif
+			}
 		}
-	}
 
-	public var frameSize: ViewProperty<CGSize> {
-		return viewProperty { value in
-			#if os(OSX)
+		public var frameSize: ViewProperty<CGSize> {
+			return viewProperty { value in
 				self.animator?.setFrameSize(value)
-			#elseif os(iOS)
-				if let origin = self.animator?.frame.origin {
-					self.animator?.frame = CGRect(origin: origin, size: value)
-				}
-			#endif
+			}
 		}
-	}
 
-	public var boundsOrigin: ViewProperty<CGPoint> {
-		return viewProperty { value in
-			#if os(OSX)
+		public var boundsOrigin: ViewProperty<CGPoint> {
+			return viewProperty { value in
 				self.animator?.setBoundsOrigin(value)
-			#elseif os(iOS)
-				if let size = self.animator?.bounds.size {
-					self.animator?.bounds = CGRect(origin: value, size: size)
-				}
-			#endif
+			}
 		}
-	}
 
-	public var boundsSize: ViewProperty<CGSize> {
-		return viewProperty { value in
-			#if os(OSX)
+		public var boundsSize: ViewProperty<CGSize> {
+			return viewProperty { value in
 				self.animator?.setBoundsSize(value)
-			#elseif os(iOS)
-				if let origin = self.animator?.bounds.origin {
-					self.animator?.bounds = CGRect(origin: origin, size: value)
-				}
-			#endif
+			}
 		}
-	}
+    #endif
 
 }
 
