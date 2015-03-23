@@ -4,4 +4,10 @@
    <FileRef
       location = "group:ReactiveAnimation.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/LlamaKit/LlamaKit.xcodeproj">
+   </FileRef>
 </Workspace>
