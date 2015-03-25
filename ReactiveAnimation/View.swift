@@ -79,6 +79,25 @@ public struct RAN {
 			#endif
 		}
 	}
+
+    #if os(OSX)
+		public var frameOrigin: ViewProperty<CGPoint> {
+			return viewProperty { self.animator?.setFrameOrigin($0) }
+		}
+
+		public var frameSize: ViewProperty<CGSize> {
+			return viewProperty { self.animator?.setFrameSize($0) }
+		}
+
+		public var boundsOrigin: ViewProperty<CGPoint> {
+			return viewProperty { self.animator?.setBoundsOrigin($0) }
+		}
+
+		public var boundsSize: ViewProperty<CGSize> {
+			return viewProperty { self.animator?.setBoundsSize($0) }
+		}
+    #endif
+
 }
 
 /// A property on a view that can be animated.
