@@ -19,7 +19,7 @@
 import ReactiveCocoa
 
 /// Wraps an NSView or UIView with bindable properties for animations.
-public struct RAN {
+public struct RANView {
 	private weak var view: View?
 	private let willDealloc: SignalProducer<(), NoError>
 
@@ -98,6 +98,11 @@ public struct RAN {
 		}
     #endif
 
+}
+
+/// Wraps an NSView or a UIView in a RANView.
+public func RAN(view: View) -> RANView {
+	return RANView(view)
 }
 
 /// A property on a view that can be animated.

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72184BC71AC30B3400B24DA0 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72184BC61AC30B3400B24DA0 /* Constraint.swift */; };
+		72184BC81AC30B3400B24DA0 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72184BC61AC30B3400B24DA0 /* Constraint.swift */; };
 		D04EE1F01ABFB9AD00AC8E65 /* ReactiveAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04EE1F61ABFB9AD00AC8E65 /* ReactiveAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE1EA1ABFB9AD00AC8E65 /* ReactiveAnimation.framework */; };
 		D04EE1FD1ABFB9AD00AC8E65 /* ReactiveAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04EE1FC1ABFB9AD00AC8E65 /* ReactiveAnimationTests.m */; };
@@ -64,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72184BC61AC30B3400B24DA0 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D04EE1EA1ABFB9AD00AC8E65 /* ReactiveAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE1EE1ABFB9AD00AC8E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAnimation.h; sourceTree = "<group>"; };
@@ -95,7 +98,7 @@
 		D04EE2591ABFBBDE00AC8E65 /* ReactiveAnimationTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveAnimationTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJunk.swift; sourceTree = "<group>"; };
 		D04EE25F1ABFBD9100AC8E65 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		D04EE2661ABFC79200AC8E65 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D04EE2661ABFC79200AC8E65 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,7 @@
 			children = (
 				D04EE25F1ABFBD9100AC8E65 /* Animation.swift */,
 				D04EE2661ABFC79200AC8E65 /* View.swift */,
+				72184BC61AC30B3400B24DA0 /* Constraint.swift */,
 			);
 			name = "Cross-Platform";
 			sourceTree = "<group>";
@@ -450,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72184BC71AC30B3400B24DA0 /* Constraint.swift in Sources */,
 				D04EE2671ABFC79200AC8E65 /* View.swift in Sources */,
 				D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
@@ -468,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72184BC81AC30B3400B24DA0 /* Constraint.swift in Sources */,
 				D04EE2681ABFC79200AC8E65 /* View.swift in Sources */,
 				D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
