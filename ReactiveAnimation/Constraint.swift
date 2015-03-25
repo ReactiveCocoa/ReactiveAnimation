@@ -9,7 +9,7 @@
 import Foundation
 import ReactiveCocoa
 
-// Wraps an NSLayoutConstraint for animating its constant using signals.
+/// Wraps an NSLayoutConstraint for animating its constant using signals.
 public struct RANConstraint {
 	private weak var layoutConstraint: NSLayoutConstraint?
 	private let willDealloc: SignalProducer<(), NoError>
@@ -72,7 +72,7 @@ public func <~ (constraint: RANConstraint, producer: SignalProducer<CGFloat, NoE
 	return disposable
 }
 
-// Binds the constraint's constant to the latest values of `sourceProperty`.
+/// Binds the constraint's constant to the latest values of `sourceProperty`.
 public func <~ <P: PropertyType where P.Value == CGFloat>(destinationConstraint: RANConstraint, sourceProperty: P) -> Disposable {
 	return destinationConstraint <~ sourceProperty.producer
 }
