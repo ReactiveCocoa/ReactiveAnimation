@@ -16,10 +16,55 @@
     "git": "https://github.com/ohwutup/ReactiveAnimation.git",
     "tag": "0.1"
   },
-  "default_subspecs": "UI",
+  // "default_subspecs": "UI",
   "requires_arc": true,
   "dependencies": {
   },
   "subspecs": [
+    // {
+    //   "name": "no-arc",
+    //   "source_files": "ReactiveCocoa/Objective-C/RACObjCRuntime.{h,m}",
+    //   "requires_arc": false,
+    //   "frameworks": "Foundation"
+    // },
+    // {
+    //   "name": "Core",
+    //   "dependencies": {
+    //     "ReactiveCocoa/no-arc": []
+    //   },
+    //   "source_files": "ReactiveCocoa/**/*.{d,h,m,swift}",
+    //   "exclude_files": [
+    //     "**/ReactiveCocoa.h",
+    //     "ReactiveCocoa/**/*{RACObjCRuntime,AppKit,NSControl,NSText,NSTable,UIActionSheet,UIAlertView,UIBarButtonItem,UIButton,UICollectionReusableView,UIControl,UIDatePicker,UIGestureRecognizer,UIImagePicker,UIRefreshControl,UISegmentedControl,UISlider,UIStepper,UISwitch,UITableViewCell,UITableViewHeaderFooterView,UIText}*"
+    //   ],
+    //   "header_dir": "ReactiveCocoa",
+    //   "private_header_files": [
+    //     "**/*Private.h",
+    //     "**/*EXTRuntimeExtensions.h",
+    //     "**/RACEmpty*.h"
+    //   ],
+    //   "frameworks": "Foundation"
+    // },
+    // {
+    //   "name": "UI",
+    //   "dependencies": {
+    //     "ReactiveCocoa/Core": []
+    //   },
+    //   "frameworks": "Foundation",
+    //   "ios": {
+    //     "source_files": [
+    //       "**/ReactiveCocoa.h",
+    //       "ReactiveCocoa/**/*{UIActionSheet,UIAlertView,UIBarButtonItem,UIButton,UICollectionReusableView,UIControl,UIDatePicker,UIGestureRecognizer,UIImagePicker,UIRefreshControl,UISegmentedControl,UISlider,UIStepper,UISwitch,UITableViewCell,UITableViewHeaderFooterView,UIText}*"
+    //     ],
+    //     "frameworks": "UIKit"
+    //   },
+    //   "osx": {
+    //     "source_files": [
+    //       "**/ReactiveCocoa.h",
+    //       "ReactiveCocoa/**/*{AppKit,NSControl,NSText,NSTable}*"
+    //     ],
+    //     "frameworks": "AppKit"
+    //   }
+    // }
   ]
 }
