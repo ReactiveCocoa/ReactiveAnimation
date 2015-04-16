@@ -55,10 +55,10 @@ import ReactiveCocoa
 ///                           /* Animate alpha, and interrupt for new animations. */
 ///                           |> join(.Latest)
 ///
-/// Returns a SignalProducer of SignalProducers, where each inner SignalProducer sends one `next`
+/// Returns a producer of producers, where each inner producer sends one `next`
 /// that corresponds to a value from the receiver, then completes when the
 /// animation corresponding to that value has finished. Deferring the events of
-/// the returned SignalProducer or having them delivered on another thread is considered
+/// the returned producer or having them delivered on another thread is considered
 /// undefined behavior.
 public func animateEach<T, Error>(duration: NSTimeInterval? = nil, curve: AnimationCurve = .Default)(producer: SignalProducer<T, Error>) -> SignalProducer<SignalProducer<T, NoError>, Error> {
 	return producer |> map { value in
