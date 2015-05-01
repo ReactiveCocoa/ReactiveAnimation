@@ -108,6 +108,50 @@ public func animateEach<T, Error>(duration: NSTimeInterval? = nil, curve: Animat
 	}
 }
 
+public func animateEach<T, NoError>(duration: NSTimeInterval? = nil, curve: AnimationCurve = .Default)(signal: Signal<T, NoError>) -> Signal<T, NoError> {
+    return signal |> map { value in
+        #if os(OSX)
+        NSAnimationContext.runAnimationGroup({ context in
+            if let duration = duration {
+                context.duration = duration
+            }
+        
+            if curve != .Default {
+                context.timingFunction = CAMediaTimingFunction(name: curve.mediaTimingFunction)
+            }
+        
+            sendNext(observer, value)
+        }, completionHandler: {
+            // Avoids weird AppKit deadlocks when interrupting an
+            // existing animation.
+            UIScheduler().schedule {
+                sendCompleted(observer)
+            }
+        })
+        #elseif os(iOS)
+        let (animationSignal, animationObserver) = Signal<T, NoError>.pipe()
+        
+        var options = UIViewAnimationOptions(UInt(curve.rawValue))
+        options |= UIViewAnimationOptions.LayoutSubviews
+        options |= UIViewAnimationOptions.BeginFromCurrentState
+        if curve != .Default {
+            options |= UIViewAnimationOptions.OverrideInheritedCurve
+        }
+        
+        UIView.animateWithDuration(duration ?? 0.2, delay: 0, options: options, animations: {
+            sendNext(animationObserver, value)
+            }, completion: { finished in
+                if finished {
+                    sendCompleted(animationObserver)
+                } else {
+                    sendInterrupted(animationObserver)
+                }
+        })
+        #endif
+        return value
+    }
+}
+
 /// The number of animated signals in the call stack.
 ///
 /// This variable should be manipulated with OSAtomic functions.
