@@ -16,7 +16,9 @@
 	public typealias AnimationCurveRawValue = UIViewAnimationCurve.RawValue
 #endif
 
+import ReactiveSwift
 import ReactiveCocoa
+import enum Result.NoError
 
 /// Creates an animated SignalProducer for each value that arrives on
 /// `producer`.
@@ -60,53 +62,67 @@ import ReactiveCocoa
 /// animation corresponding to that value has finished. Deferring the events of
 /// the returned producer or having them delivered on another thread is considered
 /// undefined behavior.
-public func animateEach<T, Error>(duration: NSTimeInterval? = nil, curve: AnimationCurve = .Default)(producer: SignalProducer<T, Error>) -> SignalProducer<SignalProducer<T, NoError>, Error> {
-	return producer |> map { value in
-		return SignalProducer { observer, disposable in
-			OSAtomicIncrement32(&runningInAnimationCount)
-			disposable.addDisposable {
-				OSAtomicDecrement32(&runningInAnimationCount)
-			}
 
-			#if os(OSX)
-				NSAnimationContext.runAnimationGroup({ context in
-					if let duration = duration {
-						context.duration = duration
-					}
 
-					if curve != .Default {
-						context.timingFunction = CAMediaTimingFunction(name: curve.mediaTimingFunction)
-					}
-
-					sendNext(observer, value)
-				}, completionHandler: {
-					// Avoids weird AppKit deadlocks when interrupting an
-					// existing animation.
-					UIScheduler().schedule {
-						sendCompleted(observer)
-					}
-				})
-			#elseif os(iOS)
-				var options = UIViewAnimationOptions(UInt(curve.rawValue))
-				options |= UIViewAnimationOptions.LayoutSubviews
-				options |= UIViewAnimationOptions.BeginFromCurrentState
-				if curve != .Default {
-					options |= UIViewAnimationOptions.OverrideInheritedCurve
-				}
-
-				UIView.animateWithDuration(duration ?? 0.2, delay: 0, options: options, animations: {
-					sendNext(observer, value)
-				}, completion: { finished in
-					if finished {
-						sendCompleted(observer)
-					} else {
-						sendInterrupted(observer)
-					}
-				})
-			#endif
-		}
-	}
+extension Signal {
+  public func animateEach(duration: TimeInterval? = nil, curve: AnimationCurve = .Default) -> Signal<SignalProducer<Value, NoError>, Error> {
+    return self.map { value in
+      return SignalProducer { observer, lifetime in
+        OSAtomicIncrement32(&runningInAnimationCount)
+        lifetime.observeEnded {
+          OSAtomicDecrement32(&runningInAnimationCount)
+        }
+        
+        #if os(OSX)
+        NSAnimationContext.runAnimationGroup({ context in
+          if let duration = duration {
+            context.duration = duration
+          }
+          
+          if curve != .Default {
+            context.timingFunction = CAMediaTimingFunction(name: curve.mediaTimingFunction)
+          }
+          
+          observer.send(value: value as! Value) // TODO: Why is the downcast necessary?
+        }, completionHandler: {
+          // Avoids weird AppKit deadlocks when interrupting an
+          // existing animation.
+          UIScheduler().schedule {
+            observer.sendCompleted()
+          }
+        })
+        #elseif os(iOS)
+        var options: UIViewAnimationOptions = [
+          UIViewAnimationOptions(rawValue: UInt(curve.rawValue)),
+          .layoutSubviews,
+          .beginFromCurrentState]
+          
+        if curve != .Default {
+          options.formUnion(.overrideInheritedCurve)
+        }
+          
+        UIView.animate(withDuration: duration ?? 0.2, delay: 0, options: options, animations: {
+          observer.send(value: value as! Value) // TODO: Why is the downcast necessary?
+        }, completion: { finished in
+          if(finished) {
+            observer.sendCompleted()
+          } else {
+            observer.sendInterrupted()
+          }
+        })
+        #endif
+      }
+    }
+  }
 }
+
+
+extension SignalProducer {
+  public func animateEach(duration: TimeInterval? = nil, curve: AnimationCurve = .Default) -> SignalProducer<SignalProducer<Value, NoError>, Error> {
+    return self.lift { $0.animateEach(duration: duration, curve: curve) }
+  }
+}
+
 
 /// The number of animated signals in the call stack.
 ///
@@ -131,31 +147,37 @@ public enum AnimationCurve: AnimationCurveRawValue, Equatable {
 
 	/// Begins the animation slowly, speeds up in the middle, then slows to
 	/// a stop.
-	case EaseInOut
-		#if os(iOS)
-			= UIViewAnimationCurve.EaseInOut
-		#endif
-
-	/// Begins the animation slowly and speeds up to a stop.
-	case EaseIn
-		#if os(iOS)
-			= UIViewAnimationCurve.EaseIn
-		#endif
-
-	/// Begins the animation quickly and slows down to a stop.
-	case EaseOut
-		#if os(iOS)
-			= UIViewAnimationCurve.EaseOut
-		#endif
-
-	/// Animates with the same pace over the duration of the animation.
-	case Linear
-		#if os(iOS)
-			= UIViewAnimationCurve.Linear
-		#endif
-
+  case EaseInOut
+  case EaseIn
+  case EaseOut
+  case Linear
+//  #if os(iOS)
+//    case EaseInOut = UIViewAnimationCurve.EaseInOut.rawValue
+//  #else
+//    case EaseInOut
+//  #endif
+//
+//  /// Begins the animation slowly and speeds up to a stop.
+//  case EaseIn
+//    #if os(iOS)
+//      = UIViewAnimationCurve.EaseIn
+//    #endif
+//
+//  /// Begins the animation quickly and slows down to a stop.
+//  case EaseOut
+//    #if os(iOS)
+//      = UIViewAnimationCurve.EaseOut
+//    #endif
+//
+//  /// Animates with the same pace over the duration of the animation.
+//  case Linear
+//    #if os(iOS)
+//      = UIViewAnimationCurve.Linear
+//    #endif
+  
 	/// The name of the CAMediaTimingFunction corresponding to this curve.
 	public var mediaTimingFunction: String {
+    
 		switch self {
 		case .Default:
 			return kCAMediaTimingFunctionDefault
@@ -185,7 +207,7 @@ public func == (lhs: AnimationCurve, rhs: AnimationCurve) -> Bool {
 	}
 }
 
-extension AnimationCurve: Printable {
+extension AnimationCurve: CustomStringConvertible {
 	public var description: String {
 		switch self {
 		case .Default:

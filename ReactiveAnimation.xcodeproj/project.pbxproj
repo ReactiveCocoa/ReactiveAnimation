@@ -7,31 +7,177 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215BF00C1EF42857006A9B71 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BEFCF1EF4282A006A9B71 /* Result.framework */; };
+		215BF00D1EF4285E006A9B71 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BEFFF1EF42837006A9B71 /* ReactiveSwift.framework */; };
+		215BF00E1EF42865006A9B71 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BEFD31EF4282A006A9B71 /* Result.framework */; };
+		215BF00F1EF4286B006A9B71 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BF0031EF42837006A9B71 /* ReactiveSwift.framework */; };
+		215BF0291EF42956006A9B71 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BF01B1EF4293E006A9B71 /* ReactiveCocoa.framework */; };
+		215BF02A1EF4295B006A9B71 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215BF01F1EF4293E006A9B71 /* ReactiveCocoa.framework */; };
+		215BF0431EF42FA9006A9B71 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
+		215BF0441EF42FAA006A9B71 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
 		D04EE1F01ABFB9AD00AC8E65 /* ReactiveAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04EE1F61ABFB9AD00AC8E65 /* ReactiveAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE1EA1ABFB9AD00AC8E65 /* ReactiveAnimation.framework */; };
 		D04EE1FD1ABFB9AD00AC8E65 /* ReactiveAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04EE1FC1ABFB9AD00AC8E65 /* ReactiveAnimationTests.m */; };
 		D04EE22E1ABFBA1E00AC8E65 /* ReactiveAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE2231ABFBA1E00AC8E65 /* ReactiveAnimation.framework */; };
 		D04EE2461ABFBB0200AC8E65 /* ReactiveAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04EE1FC1ABFB9AD00AC8E65 /* ReactiveAnimationTests.m */; };
 		D04EE2471ABFBB0400AC8E65 /* ReactiveAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D04EE24E1ABFBB6900AC8E65 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */; };
-		D04EE24F1ABFBB6900AC8E65 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; };
-		D04EE2501ABFBB8500AC8E65 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */; };
 		D04EE2511ABFBB8500AC8E65 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; };
-		D04EE2521ABFBB8900AC8E65 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */; };
-		D04EE2531ABFBB8900AC8E65 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; };
-		D04EE2541ABFBB9100AC8E65 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */; };
 		D04EE2551ABFBB9100AC8E65 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; };
-		D04EE2571ABFBBB100AC8E65 /* LlamaKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D04EE2581ABFBBB100AC8E65 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D04EE25C1ABFBBDF00AC8E65 /* SwiftJunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */; };
 		D04EE25D1ABFBBDF00AC8E65 /* SwiftJunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */; };
 		D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
 		D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE25F1ABFBD9100AC8E65 /* Animation.swift */; };
-		D04EE2671ABFC79200AC8E65 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
-		D04EE2681ABFC79200AC8E65 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04EE2661ABFC79200AC8E65 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		215BEFCE1EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480571A9572F5009D7229;
+			remoteInfo = "Result-Mac";
+		};
+		215BEFD01EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480671A9572F5009D7229;
+			remoteInfo = "Result-MacTests";
+		};
+		215BEFD21EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D454807D1A957361009D7229;
+			remoteInfo = "Result-iOS";
+		};
+		215BEFD41EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480871A957362009D7229;
+			remoteInfo = "Result-iOSTests";
+		};
+		215BEFD61EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57FCDE471BA280DC00130C48;
+			remoteInfo = "Result-tvOS";
+		};
+		215BEFD81EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57FCDE541BA280E000130C48;
+			remoteInfo = "Result-tvOSTests";
+		};
+		215BEFDA1EF4282A006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D03579A31B2B788F005D26AE;
+			remoteInfo = "Result-watchOS";
+		};
+		215BEFFE1EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725EA19E49ED7006002AA;
+			remoteInfo = "ReactiveSwift-macOS";
+		};
+		215BF0001EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725F519E49ED7006002AA;
+			remoteInfo = "ReactiveSwift-macOSTests";
+		};
+		215BF0021EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047260C19E49F82006002AA;
+			remoteInfo = "ReactiveSwift-iOS";
+		};
+		215BF0041EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047261619E49F82006002AA;
+			remoteInfo = "ReactiveSwift-iOSTests";
+		};
+		215BF0061EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9B315541B3940610001CB9C;
+			remoteInfo = "ReactiveSwift-watchOS";
+		};
+		215BF0081EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
+			remoteInfo = "ReactiveSwift-tvOS";
+		};
+		215BF00A1EF42837006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
+			remoteInfo = "ReactiveSwift-tvOSTests";
+		};
+		215BF01A1EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725EA19E49ED7006002AA;
+			remoteInfo = "ReactiveCocoa-macOS";
+		};
+		215BF01C1EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725F519E49ED7006002AA;
+			remoteInfo = "ReactiveCocoa-macOSTests";
+		};
+		215BF01E1EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047260C19E49F82006002AA;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		215BF0201EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047261619E49F82006002AA;
+			remoteInfo = "ReactiveCocoa-iOSTests";
+		};
+		215BF0221EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9B315541B3940610001CB9C;
+			remoteInfo = "ReactiveCocoa-watchOS";
+		};
+		215BF0241EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
+			remoteInfo = "ReactiveCocoa-tvOS";
+		};
+		215BF0261EF4293E006A9B71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
+			remoteInfo = "ReactiveCocoa-tvOSTests";
+		};
 		D04EE1F71ABFB9AD00AC8E65 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D04EE1E11ABFB9AD00AC8E65 /* Project object */;
@@ -55,7 +201,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D04EE2571ABFBBB100AC8E65 /* LlamaKit.framework in Copy Frameworks */,
 				D04EE2581ABFBBB100AC8E65 /* ReactiveCocoa.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -64,6 +209,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		215BEFC41EF4282A006A9B71 /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
+		215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
+		215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		D04EE1EA1ABFB9AD00AC8E65 /* ReactiveAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE1EE1ABFB9AD00AC8E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04EE1EF1ABFB9AD00AC8E65 /* ReactiveAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAnimation.h; sourceTree = "<group>"; };
@@ -90,7 +238,6 @@
 		D04EE21D1ABFB9E100AC8E65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D04EE2231ABFBA1E00AC8E65 /* ReactiveAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE22D1ABFBA1E00AC8E65 /* ReactiveAnimation-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactiveAnimation-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04EE2591ABFBBDE00AC8E65 /* ReactiveAnimationTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveAnimationTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D04EE25B1ABFBBDF00AC8E65 /* SwiftJunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJunk.swift; sourceTree = "<group>"; };
@@ -103,8 +250,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04EE24E1ABFBB6900AC8E65 /* LlamaKit.framework in Frameworks */,
-				D04EE24F1ABFBB6900AC8E65 /* ReactiveCocoa.framework in Frameworks */,
+				215BF0291EF42956006A9B71 /* ReactiveCocoa.framework in Frameworks */,
+				215BF00D1EF4285E006A9B71 /* ReactiveSwift.framework in Frameworks */,
+				215BF00C1EF42857006A9B71 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04EE1F61ABFB9AD00AC8E65 /* ReactiveAnimation.framework in Frameworks */,
-				D04EE2501ABFBB8500AC8E65 /* LlamaKit.framework in Frameworks */,
 				D04EE2511ABFBB8500AC8E65 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,8 +269,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04EE2521ABFBB8900AC8E65 /* LlamaKit.framework in Frameworks */,
-				D04EE2531ABFBB8900AC8E65 /* ReactiveCocoa.framework in Frameworks */,
+				215BF02A1EF4295B006A9B71 /* ReactiveCocoa.framework in Frameworks */,
+				215BF00F1EF4286B006A9B71 /* ReactiveSwift.framework in Frameworks */,
+				215BF00E1EF42865006A9B71 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04EE22E1ABFBA1E00AC8E65 /* ReactiveAnimation.framework in Frameworks */,
-				D04EE2541ABFBB9100AC8E65 /* LlamaKit.framework in Frameworks */,
 				D04EE2551ABFBB9100AC8E65 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +287,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215BEFC51EF4282A006A9B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				215BEFCF1EF4282A006A9B71 /* Result.framework */,
+				215BEFD11EF4282A006A9B71 /* Result-MacTests.xctest */,
+				215BEFD31EF4282A006A9B71 /* Result.framework */,
+				215BEFD51EF4282A006A9B71 /* Result-iOSTests.xctest */,
+				215BEFD71EF4282A006A9B71 /* Result.framework */,
+				215BEFD91EF4282A006A9B71 /* Result-tvOSTests.xctest */,
+				215BEFDB1EF4282A006A9B71 /* Result.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		215BEFF51EF42836006A9B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				215BEFFF1EF42837006A9B71 /* ReactiveSwift.framework */,
+				215BF0011EF42837006A9B71 /* ReactiveSwiftTests.xctest */,
+				215BF0031EF42837006A9B71 /* ReactiveSwift.framework */,
+				215BF0051EF42837006A9B71 /* ReactiveSwiftTests.xctest */,
+				215BF0071EF42837006A9B71 /* ReactiveSwift.framework */,
+				215BF0091EF42837006A9B71 /* ReactiveSwift.framework */,
+				215BF00B1EF42837006A9B71 /* ReactiveSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		215BF0111EF4293E006A9B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				215BF01B1EF4293E006A9B71 /* ReactiveCocoa.framework */,
+				215BF01D1EF4293E006A9B71 /* ReactiveCocoaTests.xctest */,
+				215BF01F1EF4293E006A9B71 /* ReactiveCocoa.framework */,
+				215BF0211EF4293E006A9B71 /* ReactiveCocoaTests.xctest */,
+				215BF0231EF4293E006A9B71 /* ReactiveCocoa.framework */,
+				215BF0251EF4293E006A9B71 /* ReactiveCocoa.framework */,
+				215BF0271EF4293E006A9B71 /* ReactiveCocoaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D04EE1E01ABFB9AD00AC8E65 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +336,9 @@
 				D04EE1F91ABFB9AD00AC8E65 /* ReactiveAnimationTests */,
 				D04EE2061ABFB9E100AC8E65 /* Configuration */,
 				D04EE1EB1ABFB9AD00AC8E65 /* Products */,
+				215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */,
+				215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */,
+				215BEFC41EF4282A006A9B71 /* Result.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,7 +366,6 @@
 		D04EE1ED1ABFB9AD00AC8E65 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D04EE24C1ABFBB6900AC8E65 /* LlamaKit.framework */,
 				D04EE24D1ABFBB6900AC8E65 /* ReactiveCocoa.framework */,
 				D04EE1EE1ABFB9AD00AC8E65 /* Info.plist */,
 			);
@@ -404,6 +595,20 @@
 			mainGroup = D04EE1E01ABFB9AD00AC8E65;
 			productRefGroup = D04EE1EB1ABFB9AD00AC8E65 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 215BF0111EF4293E006A9B71 /* Products */;
+					ProjectRef = 215BF0101EF4293E006A9B71 /* ReactiveCocoa.xcodeproj */;
+				},
+				{
+					ProductGroup = 215BEFF51EF42836006A9B71 /* Products */;
+					ProjectRef = 215BEFF41EF42836006A9B71 /* ReactiveSwift.xcodeproj */;
+				},
+				{
+					ProductGroup = 215BEFC51EF4282A006A9B71 /* Products */;
+					ProjectRef = 215BEFC41EF4282A006A9B71 /* Result.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D04EE1E91ABFB9AD00AC8E65 /* ReactiveAnimation-Mac */,
@@ -413,6 +618,156 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		215BEFCF1EF4282A006A9B71 /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 215BEFCE1EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFD11EF4282A006A9B71 /* Result-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-MacTests.xctest";
+			remoteRef = 215BEFD01EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFD31EF4282A006A9B71 /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 215BEFD21EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFD51EF4282A006A9B71 /* Result-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-iOSTests.xctest";
+			remoteRef = 215BEFD41EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFD71EF4282A006A9B71 /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 215BEFD61EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFD91EF4282A006A9B71 /* Result-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-tvOSTests.xctest";
+			remoteRef = 215BEFD81EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFDB1EF4282A006A9B71 /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 215BEFDA1EF4282A006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BEFFF1EF42837006A9B71 /* ReactiveSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveSwift.framework;
+			remoteRef = 215BEFFE1EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0011EF42837006A9B71 /* ReactiveSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveSwiftTests.xctest;
+			remoteRef = 215BF0001EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0031EF42837006A9B71 /* ReactiveSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveSwift.framework;
+			remoteRef = 215BF0021EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0051EF42837006A9B71 /* ReactiveSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveSwiftTests.xctest;
+			remoteRef = 215BF0041EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0071EF42837006A9B71 /* ReactiveSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveSwift.framework;
+			remoteRef = 215BF0061EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0091EF42837006A9B71 /* ReactiveSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveSwift.framework;
+			remoteRef = 215BF0081EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF00B1EF42837006A9B71 /* ReactiveSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveSwiftTests.xctest;
+			remoteRef = 215BF00A1EF42837006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF01B1EF4293E006A9B71 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 215BF01A1EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF01D1EF4293E006A9B71 /* ReactiveCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.xctest;
+			remoteRef = 215BF01C1EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF01F1EF4293E006A9B71 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 215BF01E1EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0211EF4293E006A9B71 /* ReactiveCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.xctest;
+			remoteRef = 215BF0201EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0231EF4293E006A9B71 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 215BF0221EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0251EF4293E006A9B71 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 215BF0241EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		215BF0271EF4293E006A9B71 /* ReactiveCocoaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.xctest;
+			remoteRef = 215BF0261EF4293E006A9B71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D04EE1E81ABFB9AD00AC8E65 /* Resources */ = {
@@ -450,7 +805,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04EE2671ABFC79200AC8E65 /* View.swift in Sources */,
+				215BF0431EF42FA9006A9B71 /* View.swift in Sources */,
 				D04EE2601ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D04EE2681ABFC79200AC8E65 /* View.swift in Sources */,
+				215BF0441EF42FAA006A9B71 /* View.swift in Sources */,
 				D04EE2611ABFBD9100AC8E65 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +891,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -547,6 +903,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -586,6 +943,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -597,6 +955,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -653,6 +1012,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Profile;
 		};
@@ -678,6 +1038,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Profile;
 		};
@@ -719,6 +1080,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Test;
 		};
@@ -744,6 +1106,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				INFOPLIST_FILE = ReactiveAnimation/Info.plist;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Test;
 		};
@@ -807,6 +1170,7 @@
 				D04EE23F1ABFBA8800AC8E65 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D04EE2391ABFBA1E00AC8E65 /* Build configuration list for PBXNativeTarget "ReactiveAnimation-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -817,6 +1181,7 @@
 				D04EE2401ABFBA8800AC8E65 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
