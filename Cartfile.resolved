@@ -1,3 +1,4 @@
-github "LlamaKit/LlamaKit" "v0.6.0"
-github "jspahrsummers/xcconfigs" "0.7.2"
-github "ReactiveCocoa/ReactiveCocoa" "ad02d8356b43e2c38f3d4d87ea0127c5f8572668"
+github "ReactiveCocoa/ReactiveCocoa" "6.0.0-alpha.1"
+github "ReactiveCocoa/ReactiveSwift" "2.0.0-alpha.2"
+github "antitypical/Result" "3.2.3"
+github "jspahrsummers/xcconfigs" "0.10"

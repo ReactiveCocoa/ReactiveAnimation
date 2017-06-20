@@ -7,145 +7,67 @@
 //
 
 #if os(OSX)
-	import AppKit
+  import AppKit
 
-	public typealias View = NSView
+  public typealias View = NSView
 #elseif os(iOS)
-	import UIKit
+  import UIKit
 
-	public typealias View = UIView
+  public typealias View = UIView
 #endif
 
+import ReactiveSwift
 import ReactiveCocoa
+import enum Result.NoError
 
-/// Wraps an NSView or UIView with bindable properties for animations.
-public struct RAN {
-	private weak var view: View?
-	private let willDealloc: SignalProducer<(), NoError>
-
-	private var animator: View? {
-		#if os(OSX)
-			if runningInAnimation {
-				return view.map { $0.animator() }
-			}
-		#endif
-
-		return view
-	}
-
-	/// Creates a wrapper for the given view's properties.
-	public init(_ view: View) {
-		self.view = view
-		self.willDealloc = view.rac_willDeallocSignal().toSignalProducer()
-			|> map { _ in () }
-			|> catch { error in
-				assert(false, "rac_willDeallocSignal failed with error: \(error)")
-				return .empty
-			}
-	}
-
-	private func viewProperty<T>(setter: T -> ()) -> ViewProperty<T> {
-		return ViewProperty(willDealloc: self.willDealloc, setter: setter)
-	}
-
-	public var frame: ViewProperty<CGRect> {
-		return viewProperty { self.animator?.frame = $0 }
-	}
-
-	public var bounds: ViewProperty<CGRect> {
-		return viewProperty { self.animator?.bounds = $0 }
-	}
-
-    #if os(iOS)
-    public var center: ViewProperty<CGPoint> {
-        return viewProperty { self.animator?.center = $0 }
+extension Reactive where Base: View {
+  public var frame: BindingTarget<CGRect> {
+    return makeBindingTarget { $0.frame = $1 }
+  }
+  
+  public var bounds: BindingTarget<CGRect> {
+    return makeBindingTarget { $0.bounds = $1 }
+  }
+  
+  #if os(iOS)
+  public var center: BindingTarget<CGPoint> {
+    return makeBindingTarget { $0.center = $1 }
+  }
+  
+  public var backgroundColor: BindingTarget<UIColor> {
+    return makeBindingTarget { $0.backgroundColor = $1 }
+  }
+  
+  public var transform: BindingTarget<CGAffineTransform> {
+    return makeBindingTarget { $0.transform = $1 }
+  }
+  #endif
+  
+  public var alpha: BindingTarget<CGFloat> {
+    return makeBindingTarget {
+      #if os(OSX)
+        $0.alphaValue = $1
+      #elseif os(iOS)
+        $0.alpha = $1
+      #endif
     }
-    
-    public var backgroundColor: ViewProperty<UIColor> {
-        return viewProperty { self.animator?.backgroundColor = $0 }
-    }
-    
-    public var transform: ViewProperty<CGAffineTransform> {
-        return viewProperty { self.animator?.transform = $0 }
-    }
-    #endif
-    
-	public var alpha: ViewProperty<CGFloat> {
-		return viewProperty { value in
-			#if os(OSX)
-				self.animator?.alphaValue = value
-			#elseif os(iOS)
-				self.animator?.alpha = value
-			#endif
-		}
-	}
-
-    #if os(OSX)
-		public var frameOrigin: ViewProperty<CGPoint> {
-			return viewProperty { self.animator?.setFrameOrigin($0) }
-		}
-
-		public var frameSize: ViewProperty<CGSize> {
-			return viewProperty { self.animator?.setFrameSize($0) }
-		}
-
-		public var boundsOrigin: ViewProperty<CGPoint> {
-			return viewProperty { self.animator?.setBoundsOrigin($0) }
-		}
-
-		public var boundsSize: ViewProperty<CGSize> {
-			return viewProperty { self.animator?.setBoundsSize($0) }
-		}
-    #endif
-
-}
-
-/// A property on a view that can be animated.
-public struct ViewProperty<T> {
-	private let willDealloc: SignalProducer<(), NoError>
-	private let setter: T -> ()
-}
-
-extension ViewProperty: SinkType {
-	public func put(value: T) {
-		setter(value)
-	}
-}
-
-/// Binds a (potentially animated) signal to a view property.
-public func <~ <T>(property: ViewProperty<T>, signal: Signal<T, NoError>) -> Disposable {
-	let disposable = CompositeDisposable()
-	let propertyDisposable = property.willDealloc.start(completed: {
-		disposable.dispose()
-	})
-
-	disposable.addDisposable(propertyDisposable)
-
-	let signalDisposable = signal.observe(next: property.setter, completed: {
-		disposable.dispose()
-	})
-
-	disposable.addDisposable(signalDisposable)
-	return disposable
-}
-
-/// Binds a (potentially animated) signal producer to a view property.
-public func <~ <T>(property: ViewProperty<T>, producer: SignalProducer<T, NoError>) -> Disposable {
-	var disposable: Disposable!
-
-	producer.startWithSignal { signal, signalDisposable in
-		property <~ signal
-		disposable = signalDisposable
-
-		property.willDealloc.start(completed: {
-			signalDisposable.dispose()
-		})
-	}
-
-	return disposable
-}
-
-/// Binds the view property to the latest values of `sourceProperty`.
-public func <~ <T, P: PropertyType where P.Value == T>(destinationProperty: ViewProperty<T>, sourceProperty: P) -> Disposable {
-	return destinationProperty <~ sourceProperty.producer
+  }
+  
+  #if os(OSX)
+  public var frameOrigin: BindingTarget<CGPoint> {
+    return viewProperty { $0.setFrameOrigin($1) }
+  }
+  
+  public var frameSize: BindingTarget<CGSize> {
+    return viewProperty { $0.setFrameSize($1) }
+  }
+  
+  public var boundsOrigin: BindingTarget<CGPoint> {
+    return viewProperty { $0.setBoundsOrigin($1) }
+  }
+  
+  public var boundsSize: BindingTarget<CGSize> {
+    return viewProperty { $0.setBoundsSize($1) }
+  }
+  #endif
 }
